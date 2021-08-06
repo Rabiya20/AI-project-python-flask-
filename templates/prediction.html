@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <style>
+            body{
+                background-image: url('static/img/bg.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container p-5">
+            <div class="card border-success mb-3 p-3" style="max-width: 40rem;" >
+                <div class="card-body text-success">
+                    <h2>Plant Health Detection System - PHDS</h2>
+                    <div class="container center">
+                        {% if data[0][0] == 1: %}
+                                                       
+                            <h1 class="text-dark">Unhealthy Leaf</h1>
+                            <img src="{{url_for('load_img')}}" alt='img'> <br><br>
+                            <h3 class='text-dark'>95.42% Accuracy</h3>
+                        {% else: %}
+                                                      
+                            <h1 class="text-dark">Healthy Leaf</h1>
+                            <img src="{{url_for('load_img')}}" alt='img'> <br><br>
+                            <h3 class='text-dark'>93.70% Accuracy</h3> 
+                        {%endif%}
+                    </div>
+                    <!-- <a class="btn btn-success" href="/">Go Back</a> -->
+                    
+                    <br>
+                </div>
+
+                <!-- <div class="card-body text-success">
+                    <h2>Plant Health Detection System - PHDS</h2>
+                    <div class="container center">
+                        {% if data > 0.5: %}
+                            <h1 class="text-dark">It is an Unhealthy Leaf</h1>
+                            <h2>Percentage is {{data}}</h2>                   
+                        {% else: %}
+                            <h1 class="text-dark">It is a Healthy Leaf</h1>
+                            <h2>Percentage is {{data}}</h2>
+                        {%endif%}
+                    </div>
+                    <img src="{{url_for('load_img')}}" alt='img'> <br><br>
+                    <a class="btn btn-success" href="/">Go Back</a>
+                    <br>
+                </div> -->
+            </div>
+        </div>
+            
+           
+            
+            
+    </body>
+</html>
